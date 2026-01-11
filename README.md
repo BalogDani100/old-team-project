@@ -1,10 +1,11 @@
 ````md
-# Old Team Project (React + Express)
+# OLD TEAM PROJECT – Legacy Team Work (React + Express)
 
-Legacy full-stack **team project** that I participated in.  
+⚠️ **IMPORTANT:** This repository is **NOT a new/active product**.  
+It is an old team project** that I participated in as a contributor.  
+It’s kept here mainly as a reference and to remain runnable locally.
+
 Frontend: **React + Vite**. Backend: **Express + Prisma + PostgreSQL**.
-
-> Note: This is an older **teamwork** project I worked on as a contributor. The goal of this repo is to keep it runnable and easier to understand/run locally.
 
 ## ✅ Key features
 
