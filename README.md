@@ -1,133 +1,105 @@
-```md
-# Team FS-02 – Full Stack Project (Legacy Team Work)
+````md
+# Old Team Project (React + Express)
 
-This repository contains a **legacy full-stack team project** that I participated in as part of a group work.  
-The goal of this repo is to preserve and run the original application in a clean and consistent structure.
+Legacy full-stack **team project** that I participated in.  
+Frontend: **React + Vite**. Backend: **Express + Prisma + PostgreSQL**.
 
-> Note: This is an older team project (“csapatmunka”), I contributed as a team member. The codebase has been cleaned up to feel consistent and easier to run locally.
+> Note: This is an older **csapatmunka** project I worked on as a contributor. The goal of this repo is to keep it runnable and easier to understand/run locally.
 
----
+## ✅ Key features
 
-## Tech Stack
-- **Frontend:** React + Vite
-- **Backend:** Node.js + Express
-- **Database:** PostgreSQL
-- **ORM:** Prisma
+* **Auth:** register + login (JWT)
+* **Main pages:** React SPA pages with API-backed data
+* **Backend API:** Express REST endpoints
+* **Database:** PostgreSQL via Prisma
 
----
+## 🧰 Requirements
 
-## Project Structure
-```
+* Node **18+**
+* npm **9+**
+* PostgreSQL (**14+ recommended**)
 
-/
-backend/     # Express API + Prisma
-frontend/    # React (Vite) client
+## 📦 Installation
 
-````
-
----
-
-## Requirements
-- **Node.js 18+** (recommended: 20)
-- **PostgreSQL 14+**
-
----
-
-## Setup & Run (Simple)
-
-### 1) Install dependencies
-From the repository root:
+### Backend
 
 ```bash
+cd backend
 npm install
 ````
 
----
-
-### 2) Configure PostgreSQL
-
-Create an empty database, for example:
-
-* `team_fs_02`
-
----
-
-### 3) Backend environment variables
-
-Copy the example env file:
+### Frontend
 
 ```bash
-cp backend/.env.example backend/.env
+cd frontend
+npm install
 ```
 
-Edit `backend/.env` and set:
+## 🔐 Environment variables
+
+### Backend `.env` (backend root)
+
+Create `backend/.env`:
 
 ```env
-DATABASE_URL="postgresql://USER:PASSWORD@localhost:5432/team_fs_02?schema=public"
-JWT_SECRET="your-long-random-secret"
+PORT=8080
+DATABASE_URL="postgresql://<user>:<password>@localhost:5432/<db_name>?schema=public"
+JWT_SECRET="change_me"
 ```
 
----
+### Frontend `.env` (frontend root)
 
-### 4) Run Prisma migrations
-
-From the repository root:
-
-```bash
-npm run backend:prisma:migrate
-```
-
----
-
-### 5) Frontend environment variables (optional)
-
-Copy:
-
-```bash
-cp frontend/.env.example frontend/.env
-```
-
-Default is usually fine:
+Create `frontend/.env`:
 
 ```env
-VITE_API_URL="http://localhost:8080"
+VITE_API_URL=http://localhost:8080
 ```
 
----
+## 🗄️ Database (Prisma + Postgres)
 
-### 6) Start the app
+Backend uses PostgreSQL via Prisma (`DATABASE_URL`).
 
-From the repository root:
+### Migrate / Prisma
 
 ```bash
+cd backend
+npx prisma migrate dev
+# (if needed) npx prisma generate
+```
+
+## 🚀 Run (dev)
+
+### 1) Backend
+
+```bash
+cd backend
 npm run dev
+# API: http://localhost:8080
 ```
 
-* Frontend: `http://localhost:5173`
-* Backend: `http://localhost:8080`
+### 2) Frontend
+
+```bash
+cd frontend
+npm run dev
+# Vite prints the local URL (usually http://localhost:5173)
+```
+
+## ℹ️ Notes
+
+* This repository is kept as a reference from a previous team-based project.
+* If the backend fails at startup, double-check:
+
+  * `backend/.env` exists
+  * `DATABASE_URL` is correct
+  * PostgreSQL is running and the DB exists
+  * Prisma migrations have been applied
 
 ---
 
-## Troubleshooting
+## 🧠 AI contribution
 
-### `net::ERR_CONNECTION_REFUSED` in the browser
-
-This means the frontend can’t reach the backend on `http://localhost:8080`:
-
-* Make sure the backend is running
-* Check the backend terminal logs for startup errors
-* Verify `VITE_API_URL` matches the backend port
-
----
-
-## Notes
-
-This project is kept as a reference from a previous team-based work.
-If you have issues running it, check:
-
-* `backend/.env` exists and contains a valid `DATABASE_URL`
-* PostgreSQL is running and the database exists
-* Prisma migrations were applied successfully
+* This README was written based on the project structure, **edited with AI assistance**.
 
 ```
 ```
