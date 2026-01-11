@@ -100,6 +100,3 @@ npm run dev
 ## 🧠 AI contribution
 
 * This README was written based on the project structure, **edited with AI assistance**.
-
-```
-```
