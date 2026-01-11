@@ -4,7 +4,7 @@
 Legacy full-stack **team project** that I participated in.  
 Frontend: **React + Vite**. Backend: **Express + Prisma + PostgreSQL**.
 
-> Note: This is an older **csapatmunka** project I worked on as a contributor. The goal of this repo is to keep it runnable and easier to understand/run locally.
+> Note: This is an older **teamwork** project I worked on as a contributor. The goal of this repo is to keep it runnable and easier to understand/run locally.
 
 ## ✅ Key features
 
